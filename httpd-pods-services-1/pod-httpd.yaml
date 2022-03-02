@@ -3,10 +3,10 @@ kind: Pod
 metadata:
   name: pod-httpd
   labels:
-    app: pod-httpd-example
+    app: pod-httpd
 spec:
   containers:
-  - name: pod-httpd-example
+  - name: pod-httpd
     image: httpd:latest
     ports:
       - containerPort: 80
