@@ -1,0 +1,11 @@
+apiVersion: 1
+kind: Service
+metadata:
+  name: lb-httpd
+spec:
+  type: LoadBalancer
+  selector:
+    app: pod-httpd-example
+  ports:
+    - port: 80
+      nodePort: 3000
