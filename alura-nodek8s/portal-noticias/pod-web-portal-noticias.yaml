@@ -12,4 +12,4 @@ spec:
       - containerPort: 80
     env:
       - name: IP_SISTEMA
-        value: http://10.108.97.63:30000
+        value: http://k8smaster.vm.dev.local:30000
