@@ -13,4 +13,4 @@ spec:
     - name: volume-pod-web-httpd-example
       hostPath:
         path: /home/vagrant/k8s-volumes/volume-pod-web-example
-        type: Directory
+        type: DirectoryOrCreate
