@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-web-portal-noticias
+  labels:
+    app: pod-web-portal-noticias
+spec:
+  containers:
+  - name: container-web-portal-noticias
+    image: aluracursos/portal-noticias:1
+    ports:
+      - containerPort: 80
+    env:
+      - name: IP_SISTEMA
+        value: http://10.108.97.63:30000

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-pod-web-sistema-noticias
+data:
+  HOST_DB: svc-nodeport-pod-db-sistema-noticias:3306
+  USER_DB: root
+  DATABASE_DB: "empresa"
+  PASS_DB: "123456"
