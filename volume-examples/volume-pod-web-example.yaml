@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-pod-web-example
+spec:
+  containers:
+    - name: container-web-httpd-example
+      image: httpd:latest
+      volumeMounts:
+        - mountPath: /httpd
+          name: volume-pod-web-httpd-example
+  volumes:
+    - name: volume-pod-web-httpd-example
+      hostPath:
+        path: /home/vagrant/k8s-volumes/volume-pod-web-example
+        type: Directory

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-pod-web-portal-noticias
+spec:
+  template:
+    metadata:
+      name: pod-web-portal-noticias
+      labels:
+        app: pod-web-portal-noticias
+    spec:
+      containers:
+      - name: container-web-portal-noticias
+        image: aluracursos/portal-noticias:1
+        ports:
+          - containerPort: 80
+        env:
+          - name: IP_SISTEMA
+            value: http://k8smaster.vm.dev.local:30000
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pod-web-portal-noticias

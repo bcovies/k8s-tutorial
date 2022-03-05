@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicaset-pod-web-sistema-noticias
+spec:
+  template:
+    metadata:
+      name: pod-web-sistema-noticias
+      labels:
+        app: pod-web-sistema-noticias
+    spec:
+      containers:
+      - name: container-web-sistema-noticias
+        image: aluracursos/sistema-noticias:1
+        ports:
+          - containerPort: 80
+        envFrom:
+          - configMapRef:
+              name: configmap-pod-web-sistema-noticias
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pod-web-sistema-noticias

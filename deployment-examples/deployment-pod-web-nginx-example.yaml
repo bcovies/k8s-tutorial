@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-pod-web-nginx-example
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: deployment-pod-web-nginx-example
+      labels:
+        app: deployment-pod-web-nginx-example
+    spec:
+      containers:
+        - name: container-web-nginx-example
+          image: nginx:stable
+          ports:
+            - containerPort: 80
+  selector:
+    matchLabels:
+      app: deployment-pod-web-nginx-example
