@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-pod-web-php
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: ingress-pod-web-php
+  rules:
+  # - host: k8smaster.vm.dev.local
+  - http:
+      paths:
+      # - path: /
+        # pathType: Prefix
+        backend:
+          service:
+            name: svc-ci-pod-web-php
+            port:
+              number: 80

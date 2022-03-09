@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-pod-web-php
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: deployment-pod-web-php
+      labels:
+        app: deployment-pod-web-php
+    spec:
+      containers:
+        - name: container-web-php
+          image: bcovies/php-lb-tester
+          ports:
+            - containerPort: 80
+  selector:
+    matchLabels:
+      app: deployment-pod-web-php
